@@ -1,3 +1,9 @@
-<p>
-  sign-up works!
-</p>
+<form [formGroup]="form" class="auth-form">
+  <mat-form-field class="fw-container">
+    <input name="email" matInput placeholder="E-mail" type="email" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field class="fw-container">
+    <input name="password" matInput placeholder="Password" type="password" formControlName="password">
+  </mat-form-field>
+</form>

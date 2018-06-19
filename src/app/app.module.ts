@@ -10,9 +10,10 @@ import {
   MatCheckboxModule,
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule
 } from '@angular/material';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -32,8 +33,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-
+    // MatFormFieldModule,
     AppRoutingModule
+    // MatInputModule
   ],
   providers: [AuthGuard, AuthGuardService],
   bootstrap: [AppComponent]
