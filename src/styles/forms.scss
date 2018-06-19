@@ -1,0 +1,10 @@
+@import "styles/variables.scss";
+
+.auth-container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
+    background: $primary-bg;
+    padding: 30px;
+}

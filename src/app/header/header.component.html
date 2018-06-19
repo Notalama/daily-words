@@ -1,0 +1,11 @@
+<nav class="fw-container header-container">
+  <button mat-icon-button [matMenuTriggerFor]="menu" color="accent">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item><a mat-color="accent" routerLink="/auth/sign-in">Sign In</a></button>
+    <!-- <button mat-menu-item><a mat-color="accent" [routerLink]="['auth', {outlets: {auth: 'sign-in'}}]">Sign In</a></button> -->
+    <button mat-menu-item><a routerLink="/auth/sign-up">Sign Up</a></button>
+  </mat-menu>
+</nav>
+
