@@ -1,3 +1,7 @@
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
 import { AuthGuardService } from './auth-guard.service';
 import { AuthGuard } from './auth-guard';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,13 +14,12 @@ import {
   MatCheckboxModule,
   MatToolbarModule,
   MatIconModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatInputModule
+  MatCardModule
 } from '@angular/material';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,9 +36,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    // MatFormFieldModule,
-    AppRoutingModule
-    // MatInputModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [AuthGuard, AuthGuardService],
   bootstrap: [AppComponent]
