@@ -1,3 +1,5 @@
+import { api } from './../shared/api.urls';
+import { AuthorizationService } from './auth.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AuthComponent } from './auth.component';
 import { NgModule } from '@angular/core';
@@ -12,6 +14,7 @@ export const ROUTES: Routes = [
   {
     path: '',
     component: AuthComponent,
+    resolve: {},
     children: [
       {
         path: 'sign-in',
@@ -38,6 +41,13 @@ export const ROUTES: Routes = [
     AuthComponent,
     SignInComponent,
     SignUpComponent
+  ],
+  providers: [
+    AuthorizationService,
+    {
+      provide: 'api',
+      useValue: api
+    }
   ]
 })
 export class AuthModule { }
