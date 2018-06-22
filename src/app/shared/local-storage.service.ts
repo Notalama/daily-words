@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class LocalStorageService {
 
-  private _currentUser: User;
+  _currentUser: User;
   private _subjectUser: BehaviorSubject<User>;
   currentUser: Observable<User>;
   constructor() {
@@ -21,11 +21,14 @@ export class LocalStorageService {
   }
 
   isLoggedIn(): boolean {
-    return this._currentUser.isLoggedIn;
+    return this._currentUser ? this._currentUser.isLoggedIn : false;
   }
 
   setup() {
-    this._currentUser.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true' ? true : false;
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true' ? true : false;
+    if (this._currentUser) {
+      this._currentUser.isLoggedIn = loggedIn;
+    }
     this._subjectUser.next(this._currentUser);
   }
 }
