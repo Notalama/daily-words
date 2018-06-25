@@ -1,0 +1,13 @@
+<div 
+  class="err-container"
+  *ngIf="field.dirty &&
+  field.invalid &&
+  field.touched">
+  <div class="alert alert-danger" *ngIf="field.invalid">{{message}}</div>
+</div>
+<div 
+  class="err-container"
+  *ngIf="field.dirty &&
+  field.validators.email">
+  <div class="alert alert-danger" *ngIf="field.invalid">{{message}}</div>
+</div>

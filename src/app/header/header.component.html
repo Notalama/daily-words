@@ -3,9 +3,9 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item><a mat-color="accent" routerLink="/auth/sign-in">Sign In</a></button>
-    <!-- <button mat-menu-item><a mat-color="accent" [routerLink]="['auth', {outlets: {auth: 'sign-in'}}]">Sign In</a></button> -->
-    <button mat-menu-item><a routerLink="/auth/sign-up">Sign Up</a></button>
+    <a routerLink="/auth/sign-in" *ngIf="!isLoggedIn"><button mat-menu-item>Sign In</button></a>
+    <a routerLink="/auth/sign-up" *ngIf="!isLoggedIn"><button mat-menu-item>Sign Up</button></a>
+    <a routerLink="app" *ngIf="isLoggedIn"><button mat-menu-item>Sign Out</button></a>
   </mat-menu>
 </nav>
 

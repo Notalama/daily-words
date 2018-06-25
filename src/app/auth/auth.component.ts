@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-auth',
@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject('api') private api: {String}
+  ) { }
 
   ngOnInit() {
+    // console.log(this.api);
   }
 
 }

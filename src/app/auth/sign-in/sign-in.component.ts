@@ -1,3 +1,5 @@
+import { AuthorizationService } from './../auth.service';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  form = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]]
+  });
+
+  constructor(private fb: FormBuilder, private authService: AuthorizationService) { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.authService.signIn(this.form.value);
+  }
 }
