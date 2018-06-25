@@ -1,9 +1,17 @@
 @import "styles/variables.scss";
 body {
 	margin: 0;
+	background: linear-gradient(to right, #642b73, #c6426e);
 }
 
 a {
 	color: $accent;
 	text-decoration: none;
+}
+button.btn-custom {
+	color: #fff;
+	background-color: $primary-color;
+	&:hover {
+		background-color: $secondary-color;
+	}
 }
