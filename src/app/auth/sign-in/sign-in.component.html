@@ -1,11 +1,11 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form" autocomplete="on" novalidate>
   <mat-form-field class="fw-container">
-    <input name="email" matInput placeholder="E-mail" type="email" formControlName="email">
+    <input name="email" matInput placeholder="E-mail" type="email" formControlName="email" required>
   </mat-form-field>
 
   <mat-form-field class="fw-container">
-    <input name="password" matInput placeholder="Password" type="password" formControlName="password">
+    <input name="password" matInput placeholder="Password" type="password" formControlName="password" required>
   </mat-form-field>
 
-  <button mat-button class="btn-custom">Register</button>
+  <button mat-button class="btn-custom">Sign In</button>
 </form>

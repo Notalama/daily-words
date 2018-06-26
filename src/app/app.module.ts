@@ -1,3 +1,4 @@
+import { LocalStorageService } from './shared/local-storage.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
@@ -46,7 +47,7 @@ import { ValidationMessageComponent } from './shared/validation-message/validati
     AngularFireAuthModule,
     MatRadioModule
   ],
-  providers: [AuthGuard, AuthGuardService],
+  providers: [AuthGuard, AuthGuardService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
+import { LocalStorageService } from './shared/local-storage.service';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
 
 @Injectable()
 
@@ -7,20 +7,18 @@ export class AuthGuardService {
 
   private rank = 'admin';
   private status: boolean;
-
-  constructor() {
-    this.status = localStorage.getItem('isLoggedIn') === 'true' ? true : false;
-  }
+  constructor(private ls: LocalStorageService) {}
 
   checkPermissions() {
     return this.rank === 'admin' ? true : false;
   }
 
   isLoggedIn() {
+    this.ls.status.subscribe(res => {
+      this.status = res;
+    });
+    this.ls.setup();
     return this.status;
   }
 
-  signIn() {
-    localStorage.setItem('isLoggedIn', 'true');
-  }
 }
