@@ -1,4 +1,33 @@
+@import "styles/variables.scss";
 .mat-button-wrapper {
 	position: relative;
 	top: -2px;
+}
+
+.dict-header {
+	text-align: center;
+	background-color: transparent;
+	color: #fff;
+	text-transform: uppercase;
+	h1 {
+		opacity: .7;
+	}
+}
+
+.side-wrap {
+	width: calc(50% - 30px);
+	padding: 15px;
+	float: left;
+	.mat-list-item-content {
+		color: #fff;
+	}
+}
+.mat-list {
+	opacity: .8;
+	.mat-divider {
+	margin-bottom: 15px;
+	}
+}
+.left-side .mat-list-item-content {
+	justify-content: flex-end;
 }
