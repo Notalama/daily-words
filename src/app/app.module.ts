@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { LocalStorageService } from './shared/local-storage.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
@@ -13,7 +15,10 @@ import {
   MatCheckboxModule,
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatListModule,
+  MatInputModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,6 +27,7 @@ import { environment } from './../environments/environment';
 import {MatRadioModule} from '@angular/material/radio';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { ValidationMessageComponent } from './shared/validation-message/validation-message.component';
+import { DictionaryItemComponent } from './dictionary/dictionary-item/dictionary-item.component';
 
 @NgModule({
   declarations: [
@@ -29,9 +35,13 @@ import { ValidationMessageComponent } from './shared/validation-message/validati
     HeaderComponent,
     DashboardComponent,
     DictionaryComponent,
-    ValidationMessageComponent
+    ValidationMessageComponent,
+    DictionaryItemComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
     BrowserModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -44,9 +54,10 @@ import { ValidationMessageComponent } from './shared/validation-message/validati
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    MatRadioModule
+    MatRadioModule,
+    MatListModule
   ],
-  providers: [AuthGuard, AuthGuardService],
+  providers: [AuthGuard, AuthGuardService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

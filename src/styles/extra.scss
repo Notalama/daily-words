@@ -1,4 +1,63 @@
+@import "styles/variables.scss";
 .mat-button-wrapper {
-	position: relative;
-	top: -2px;
+    position: relative;
+    top: -2px;
+}
+
+.dict-header {
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    h1 {
+        opacity: .7;
+    }
+}
+
+.side-wrap {
+    width: calc(50% - 30px);
+    padding: 15px;
+    float: left;
+    .mat-list-item-content {
+        color: #fff;
+    }
+}
+
+.mat-list {
+    opacity: .8;
+    .mat-divider {
+        margin-bottom: 15px;
+    }
+}
+
+.mat-form-field.mat-focused {
+	span.mat-form-field-ripple {
+		background-color: #fff;
+		opacity: .8;
+	}
+    label.mat-form-field-label {
+        color: #fff;
+        opacity: .8;
+    }
+}
+
+.left-side {
+	button.add-btn.mat-menu-item {
+		float: right;
+		margin-right: 15px;
+		// margin-left: 0px;
+	}
+	.mat-list-item-content {
+		justify-content: flex-end;
+	}
+}
+
+button.add-btn.mat-menu-item {
+    color: #fff;
+    width: 80px;
+    float: left;
+    border: 1px solid;
+    text-align: center;
+	border-radius: 5px;
+	margin-left: 15px;
 }

@@ -3,9 +3,15 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <a routerLink="/auth/sign-in" *ngIf="!isLoggedIn"><button mat-menu-item>Sign In</button></a>
-    <a routerLink="/auth/sign-up" *ngIf="!isLoggedIn"><button mat-menu-item>Sign Up</button></a>
-    <a routerLink="app" *ngIf="isLoggedIn"><button mat-menu-item>Sign Out</button></a>
+    <a routerLink="/auth/sign-in" *ngIf="!isLoggedIn" class="nav-link">
+      <button mat-menu-item>Sign In</button>
+    </a>
+    <a routerLink="/auth/sign-up" *ngIf="!isLoggedIn" class="nav-link">
+      <button mat-menu-item>Sign Up</button>
+    </a>
+    <a (click)="onSignOut()" *ngIf="isLoggedIn" class="nav-link">
+      <button mat-menu-item>Sign Out</button>
+    </a>
   </mat-menu>
+  <a routerLink="/" class="mat-menu-item nav-link">Home</a>
 </nav>
-
